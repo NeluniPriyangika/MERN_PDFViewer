@@ -24,6 +24,10 @@ function HomePage() {
           </form>
         </div>
       </div>
+
+      <div className='Uploaded PDFs'>
+
+      </div>
       
 
     </div>
