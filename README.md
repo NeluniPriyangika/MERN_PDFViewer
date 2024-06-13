@@ -16,7 +16,7 @@ Before you begin, ensure you have the following installed on your machine:
 ### 1. Clone the Project Folder
 
 >> First, clone the repository to your local machine using the following command:
-'clone https://github.com/your-username/your-repo-name.git'
+https://github.com/NeluniPriyangika/MERN_PDFViewer.git
 
 ### 2. Set Up the Client
 
