@@ -127,5 +127,13 @@ form .signup-link_signup{
      text-decoration: underline;  
 }
 
+form .mess{
+    text-align: center;
+}
+
+.mess span{
+    color: red;
+    text-align: center;
+}
 
 

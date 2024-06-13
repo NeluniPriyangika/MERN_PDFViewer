@@ -21,6 +21,7 @@ function SignupPage() {
 
   const onSubmit = async e => {
     e.preventDefault();
+    setError(false);
     try {
       const res = await axios.post('http://localhost:5000/api/auth/signup', formData);
       res.data &&  window.location.replace('/login'); 
@@ -66,7 +67,10 @@ function SignupPage() {
           </div>
 
           <button type='submit' onClick={onSubmit}>Sign Up</button>
-
+          <div className='mess'>
+            {error && <span>Something went wrong</span>}
+          </div>
+          
           <div className="signup-link_signup">
             <p>Already have an account? <a href='/#'>Login</a></p>
           </div>
