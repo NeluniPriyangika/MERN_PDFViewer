@@ -1,0 +1,68 @@
+.home-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.Uploaded-PDFs {
+    width: 100%;
+    max-width: 170vh; 
+    align-items: center;
+    padding: 20px; 
+}
+
+.Uploaded-PDFs h1 {
+    color: #fff;
+    align-items: center;
+    text-align: center;
+}
+
+.getpdf-maindiv {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Create 5 equal columns */
+    gap: 10px;
+    justify-items: center;
+}
+
+.getpdf-innerdiv {
+    background-color: aqua;
+    width: 200px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px; 
+}
+
+
+
+.getpdf-innerdiv .title-div h3,
+.getpdf-innerdiv .dis-div h5 {
+    margin: 10px 0; 
+    /* word-wrap: break-word; */
+    overflow: hidden; /* Hide overflowing content */
+    text-overflow: ellipsis;/* Reduce the margin to decrease the gap */
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* Limit to 3 lines */
+    -webkit-box-orient: vertical;
+}
+
+.getpdf-innerdiv button {
+    width: 90%;
+    height: 45px;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgb(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 700;
+    top: 10px;
+    bottom: 10px;
+}
