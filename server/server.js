@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const morgan = require('morgan');
+const cors = require('cors');
 const winston = require('./config/winston.js');
 const authRoutes = require('./routes/auth.js');
 const pdfRoutes = require('./routes/pdf.js');
@@ -13,6 +14,7 @@ dotenv.config();
 const app = express();
 
 // Middleware
+app.use(cors());
 app.use(express.json());
 app.use(morgan('combined', { stream: winston.stream }));
 
