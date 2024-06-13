@@ -72,8 +72,8 @@ function HomePage() {
             <div className='input-box'>
               <input type='text' name='description' placeholder='Description' value={formData.description} onChange={onChange} required />
             </div>
-            <div className='input-box'>
-              <input type='file' name='pdf' accept='application/pdf' onChange={onChange} required />
+            <div className='input-box1'>
+              <input type='file' name='pdf' accept='application/pdf' onChange={onChange} required/>
             </div>
             <button type='submit' onSubmit={onSubmit}>Upload</button>
           </form>
