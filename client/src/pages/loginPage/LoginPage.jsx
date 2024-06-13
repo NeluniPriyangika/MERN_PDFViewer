@@ -20,6 +20,7 @@ function LoginPage() {
     try {
       const res = await axios.post('http://localhost:5000/api/auth/login', formData);
       localStorage.setItem('token', res.data.token);// Store token in localStorage 
+      localStorage.setItem('user', JSON.stringify(res.data.user)); // Store user in localStorage
       alert("You have logged in successfully");
       navigate('/homepage'); // Navigate to homepage on successful login*/
     } catch (err) {

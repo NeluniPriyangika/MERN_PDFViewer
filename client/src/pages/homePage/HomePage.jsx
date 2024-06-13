@@ -1,10 +1,11 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import './homePage.css';
 import axios from 'axios';
-import { Context } from '../../actions/context/Context';
+import { Link } from 'react-router-dom';
+
 
 function HomePage() {
-  const { user } = useContext(Context);
+  
   const [pdfs, setPdfs] = useState([]);
   const [formData, setFormData] = useState({
     title: '',
@@ -55,7 +56,7 @@ function HomePage() {
       setPdfs([...pdfs, res.data]);
       setFormData({ title: '', description: '', pdf: null });
     } catch (err) {
-      console.error(err.response.data);
+      console.error(err.res.data);
     }
   };
 
@@ -63,7 +64,7 @@ function HomePage() {
     <div className='home-main'>
       <div className='wrapper'>
         <div className='from-box uploadpdf'>
-          <form onSubmit={onSubmit}>
+          <form>
             <h1>Upload your PDF here</h1>
             <div className='input-box'>
               <input type='text' name='title' placeholder='Title' value={formData.title} onChange={onChange} required />
@@ -74,7 +75,7 @@ function HomePage() {
             <div className='input-box'>
               <input type='file' name='pdf' accept='application/pdf' onChange={onChange} required />
             </div>
-            <button type='submit'>Upload</button>
+            <button type='submit' onSubmit={onSubmit}>Upload</button>
           </form>
         </div>
       </div>
@@ -91,9 +92,9 @@ function HomePage() {
               <div className='dis-div'>
                 <h5>{pdf.description}</h5>
               </div>
-              <a href={`http://localhost:5000/uploads/${pdf.filename}`} target='_blank' rel='noopener noreferrer'>
+              <Link to={`/pdfViewer?file=${encodeURIComponent(`http://localhost:5000/uploads/${pdf.filename}`)}`}>
                 <button className='view-pdfbtn'>View PDF</button>
-              </a>
+              </Link>
             </div>
           ))}
         </div>

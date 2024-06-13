@@ -7,8 +7,8 @@ exports.uploadPDF = async (req, res) => {
         return res.status(400).json({ msg: 'No file uploaded' });
     }
     try {
-        console.log("File uploaded:", file);
-        console.log("Request body:", req.body);
+        //console.log("File uploaded:", file);
+        //console.log("Request body:", req.body);
         const pdf = new PDF({
             title,
             description,

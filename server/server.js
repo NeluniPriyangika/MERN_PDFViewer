@@ -32,7 +32,7 @@ mongoose.connect(process.env.MONGO_URL)
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/pdf', authMiddleware, pdfRoutes);
-//app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Start Server
 const PORT = process.env.PORT || 5000;
